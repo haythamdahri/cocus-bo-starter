@@ -5,11 +5,9 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.JoinColumn;
-import javax.persistence.ManyToOne;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Set;
 
 /**
  * @author Haytham DAHRI
@@ -20,7 +18,7 @@ import java.io.Serializable;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class Reports extends AbstractEntity implements Serializable {
+public class Report extends AbstractEntity implements Serializable {
 
     private static final long serialVersionUID = -2915015204749989229L;
 
@@ -32,8 +30,9 @@ public class Reports extends AbstractEntity implements Serializable {
     @JoinColumn(name = "case_id")
     private CaseBO customerCase;
 
-    @ManyToOne
-    @JoinColumn(name = "label_id")
-    private LabelBO label;
+    @ManyToMany(fetch = FetchType.EAGER)
+    @JoinTable(name = "reports_labels", joinColumns = @JoinColumn(name = "report_id"),
+            inverseJoinColumns = @JoinColumn(name = "label_id"))
+    private Set<LabelBO> labels;
 
 }
