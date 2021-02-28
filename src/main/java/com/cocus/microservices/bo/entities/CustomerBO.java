@@ -29,6 +29,9 @@ public class CustomerBO extends AbstractEntity implements Serializable {
     @Column(name = "last_name", length = 255)
     private String lastName;
 
+    @Column(name = "username", unique = true, length = 30)
+    private String username;
+
     @OneToMany(cascade = CascadeType.ALL)
     private Set<CaseBO> customerCases;
 
