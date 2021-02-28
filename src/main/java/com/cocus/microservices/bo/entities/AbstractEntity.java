@@ -8,7 +8,6 @@ import java.sql.Timestamp;
 /**
  * @author Haytham DAHRI
  */
-@Entity
 @Data
 @MappedSuperclass
 public abstract class AbstractEntity {
