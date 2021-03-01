@@ -13,7 +13,7 @@ import java.sql.Timestamp;
 public abstract class AbstractEntity {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE)
     @Column(name = "ID", unique = true, updatable = false)
     private Long id;
 

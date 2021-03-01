@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.cocus.microservices</groupId>
     <artifactId>bo</artifactId>
-    <version>0.0.4.RELEASE-SNAPSHOT</version>
+    <version>0.0.5.RELEASE-SNAPSHOT</version>
     <name>cocus-bo-starter</name>
     <description>Business Objects Starter</description>
     <properties>
