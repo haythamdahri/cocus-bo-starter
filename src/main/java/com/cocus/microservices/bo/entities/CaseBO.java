@@ -24,8 +24,8 @@ public class CaseBO extends AbstractEntity implements Serializable {
     @Column(name = "content", columnDefinition = "TEXT")
     private String content;
 
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "customer_id")
-    private CustomerBO customerBO;
+    private CustomerBO customer;
 
 }
