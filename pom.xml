@@ -9,7 +9,7 @@
     </parent>
     <groupId>com.cocus.microservices</groupId>
     <artifactId>bo</artifactId>
-    <version>0.0.6.RELEASE</version>
+    <version>0.0.7.RELEASE-SNAPSHOT</version>
     <name>cocus-bo-starter</name>
     <description>Business Objects Starter</description>
     <properties>
@@ -48,7 +48,7 @@
     <scm>
         <connection>scm:git:git@github.com:haythamdahri/cocus-bo-starter.git</connection>
         <developerConnection>scm:git:git@github.com:haythamdahri/cocus-bo-starter.git</developerConnection>
-      <tag>bo-0.0.6.RELEASE</tag>
+      <tag>HEAD</tag>
   </scm>
 
 </project>
