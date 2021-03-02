@@ -25,7 +25,7 @@ public class LabelBO extends AbstractEntity implements Serializable {
     @Column(name = "description", length = 850, unique = true)
     private String description;
 
-    @ManyToMany(mappedBy = "labels")
-    private List<ReportBO> reports;
+    @ManyToMany(mappedBy = "conditions")
+    private List<CaseBO> cases;
 
 }

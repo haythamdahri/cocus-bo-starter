@@ -7,6 +7,8 @@ import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.time.LocalDateTime;
+import java.util.Set;
 
 /**
  * @author Haytham DAHRI
@@ -27,5 +29,14 @@ public class CaseBO extends AbstractEntity implements Serializable {
     @ManyToOne(cascade = {CascadeType.DETACH, CascadeType.MERGE, CascadeType.REFRESH})
     @JoinColumn(name = "customer_id")
     private CustomerBO customer;
+
+    @ManyToMany
+    @JoinTable(name = "cases_labels", joinColumns = @JoinColumn(name = "case_id"),
+            inverseJoinColumns = @JoinColumn(name = "label_id"))
+    private Set<LabelBO> conditions;
+
+    private boolean reviewed;
+
+    private LocalDateTime lastReviewDate;
 
 }
